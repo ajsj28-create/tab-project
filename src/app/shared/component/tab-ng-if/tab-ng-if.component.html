@@ -1,0 +1,57 @@
+<div class="row my-5">
+    <div class="col-md-8 offset-md-2">
+        <h2>1. Using *ngIf only</h2>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a
+                        (click)="selectedSkill = 'html'"
+                        [class.active]="selectedSkill.includes('html')"
+                        href="javascript:;" class="nav-link">
+                            HTML
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        (click)="selectedSkill = 'css'"
+                        [class.active]="selectedSkill.includes('css')"
+                        href="javascript:;" class="nav-link">
+                            CSS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        (click)="selectedSkill = 'js'"
+                        [class.active]="selectedSkill.includes('js')" 
+                        href="javascript:;" class="nav-link">
+                            JavaScript
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        (click)="selectedSkill = 'angular'"
+                        [class.active]="selectedSkill.includes('angular')"
+                        href="javascript:;" class="nav-link">
+                            Angular
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <p *ngIf="selectedSkill.includes('html')" class="m-0">
+                    <strong>HTML</strong> (HyperText Markup Language) is the foundation of every web page. It structures the content using elements like headings, paragraphs, links, images, and forms. A strong understanding of semantic HTML helps improve accessibility, SEO, and maintainability of websites.
+                </p>
+                <p *ngIf="selectedSkill.includes('css')" class="m-0">
+                    <strong>CSS</strong> (Cascading Style Sheets) is used to style, layout, and visually enhance web pages. It controls colors, typography, spacing, positioning, and responsive design. With modern features like Flexbox, Grid, and preprocessors such as SASS, CSS enables powerful and efficient UI development.
+                </p>
+                <p *ngIf="selectedSkill.includes('js')" class="m-0">
+                    <strong>JavaScript</strong> is a dynamic, high-level programming language that brings interactivity and logic to web applications. It enables event handling, DOM manipulation, API integration, and asynchronous operations using promises and async/await. It forms the backbone of modern front-end development.
+                </p>
+                <p *ngIf="selectedSkill.includes('angular')" class="m-0">
+                    <strong>Angular</strong> is a robust front-end framework developed by Google, built with TypeScript. It provides tools for building scalable single-page applications with features like components, data binding, dependency injection, and routing. Angular promotes structured architecture and maintainable codebases.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

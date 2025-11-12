@@ -1,0 +1,37 @@
+<div class="row my-5">
+    <div class="col-md-8 offset-md-2">
+        <h2>2. Using *ngFor and [ngSwitch]</h2>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-pills">
+                    <li
+                    *ngFor="let skill of skillsArray"
+                    class="nav-item">
+                        <a
+                        (click)="selectedSkill = skill.skill"
+                        [class.active]="selectedSkill.includes(skill.skill)"
+                        href="javascript:;" class="nav-link">
+                            {{skill.skill}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div [ngSwitch]="selectedSkill.toLocaleLowerCase()">
+                    <p *ngSwitchCase="'html'" class="m-0">
+                        <strong>HTML</strong> (HyperText Markup Language) is the foundation of every web page. It structures the content using elements like headings, paragraphs, links, images, and forms. A strong understanding of semantic HTML helps improve accessibility, SEO, and maintainability of websites.
+                    </p>
+                    <p *ngSwitchCase="'css'" class="m-0">
+                        <strong>CSS</strong> (Cascading Style Sheets) is used to style, layout, and visually enhance web pages. It controls colors, typography, spacing, positioning, and responsive design. With modern features like Flexbox, Grid, and preprocessors such as SASS, CSS enables powerful and efficient UI development.
+                    </p>
+                    <p *ngSwitchCase="'javascript'" class="m-0">
+                        <strong>JavaScript</strong> is a dynamic, high-level programming language that brings interactivity and logic to web applications. It enables event handling, DOM manipulation, API integration, and asynchronous operations using promises and async/await. It forms the backbone of modern front-end development.
+                    </p>
+                    <p *ngSwitchCase="'angular'" class="m-0">
+                        <strong>Angular</strong> is a robust front-end framework developed by Google, built with TypeScript. It provides tools for building scalable single-page applications with features like components, data binding, dependency injection, and routing. Angular promotes structured architecture and maintainable codebases.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

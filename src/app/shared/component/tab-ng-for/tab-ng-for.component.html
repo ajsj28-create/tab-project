@@ -1,0 +1,28 @@
+<div class="row my-5">
+    <div class="col-md-8 offset-md-2">
+        <h2>3. Using *ngFor and *ngIf</h2>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-pills">
+                    <li
+                    *ngFor="let skill of skillsArray"
+                    class="nav-item">
+                        <a
+                        (click)="selectedSkill = skill.skill"
+                        [class.active]="selectedSkill.includes(skill.skill)"
+                        href="javascript:;" class="nav-link">
+                            {{skill.skill}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <ng-container *ngFor="let skill of skillsArray">
+                    <p *ngIf="selectedSkill.includes(skill.skill)" class="m-0">
+                        <strong>{{skill.skill}}</strong> {{skill.skillInfo}}
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
