@@ -18,8 +18,9 @@
             </div>
             <div class="card-body">
                 <ng-container *ngFor="let skill of skillsArray">
-                    <p *ngIf="selectedSkill.includes(skill.skill)" class="m-0">
-                        <strong>{{skill.skill}}</strong> {{skill.skillInfo}}
+                    <p
+                    *ngIf="selectedSkill.includes(skill.skill)" class="m-0"
+                    [innerHTML]="skill.skillInfo">
                     </p>
                 </ng-container>
             </div>
